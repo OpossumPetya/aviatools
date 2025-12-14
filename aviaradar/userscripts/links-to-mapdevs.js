@@ -2,8 +2,9 @@
 // @name         Show Coverage Areas on mapdevelopers.com
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Transpose polar diagramm onto a read map on mapdevelopers.com
+// @description  Transpose polar diagramm onto a real map on mapdevelopers.com
 // @match        https://aviaradar.ru/top-radars/radar/*
+// @downloadURL  https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
@@ -106,7 +107,9 @@
                 ];
 
                 const mapdevsURL = 'https://www.mapdevelopers.com/area_finder.php?polygons=' + encodeURIComponent( JSON.stringify(finalData) );
-                const span = document.querySelectorAll('[class*="styles_radar_info_chart_block_header"] > span')[2];
+                const diagramElements = Array.from(document.querySelectorAll('[class*="styles_radar_info_chart_block_header"]'))
+                    .filter(el => el.textContent.includes('Полярная диаграмма'));
+                const span = diagramElements[0].querySelector(':scope > span');
                 span.insertAdjacentHTML('afterbegin', "<a href='"+mapdevsURL+"' target='_blank' rel='noopener noreferrer' style='text-decoration:none;font-size:90%'>both</a> :: ");
 
             } catch (err) {
