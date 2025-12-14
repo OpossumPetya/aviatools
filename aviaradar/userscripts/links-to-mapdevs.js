@@ -4,6 +4,8 @@
 // @version      0.2
 // @description  Transpose polar diagramm onto a real map on mapdevelopers.com
 // @match        https://aviaradar.ru/top-radars/radar/*
+// @run-at       document-end
+// @updateURL    https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
 // @downloadURL  https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
@@ -106,7 +108,7 @@
                     [ locationsMedian, "#C1D4F5", "#3170DF", 0.4 ]
                 ];
 
-                const mapdevsURL = 
+                const mapdevsURL =
                     'https://www.mapdevelopers.com/area_finder.php?polygons=' + encodeURIComponent( JSON.stringify(finalData) );
                 const span = Array.from(document.querySelectorAll('[class*="styles_radar_info_chart_block_header"]'))
                     .filter(el => el.textContent.includes('Полярная диаграмма'))
