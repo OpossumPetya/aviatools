@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show Coverage Areas on mapdevelopers.com
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Transpose polar diagramm onto a real map on mapdevelopers.com
 // @match        https://aviaradar.ru/top-radars/radar/*
 // @downloadURL  https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
@@ -106,11 +106,13 @@
                     [ locationsMedian, "#C1D4F5", "#3170DF", 0.4 ]
                 ];
 
-                const mapdevsURL = 'https://www.mapdevelopers.com/area_finder.php?polygons=' + encodeURIComponent( JSON.stringify(finalData) );
-                const diagramElements = Array.from(document.querySelectorAll('[class*="styles_radar_info_chart_block_header"]'))
-                    .filter(el => el.textContent.includes('Полярная диаграмма'));
-                const span = diagramElements[0].querySelector(':scope > span');
-                span.insertAdjacentHTML('afterbegin', "<a href='"+mapdevsURL+"' target='_blank' rel='noopener noreferrer' style='text-decoration:none;font-size:90%'>both</a> :: ");
+                const mapdevsURL = 
+                    'https://www.mapdevelopers.com/area_finder.php?polygons=' + encodeURIComponent( JSON.stringify(finalData) );
+                const span = Array.from(document.querySelectorAll('[class*="styles_radar_info_chart_block_header"]'))
+                    .filter(el => el.textContent.includes('Полярная диаграмма'))
+                    .at(0)
+                    .querySelector(':scope > span');
+                span.insertAdjacentHTML('afterbegin', "<a href='"+mapdevsURL+"' target='_blank' rel='noopener noreferrer' style='text-decoration:none;font-size:85%'>КАРТА</a> :: ");
 
             } catch (err) {
                 console.error("Failed to parse JSON:", err);
