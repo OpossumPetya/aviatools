@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Show Coverage Areas on mapdevelopers.com
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Transpose polar diagramm onto a real map on mapdevelopers.com
-// @match        https://aviaradar.ru/top-radars/radar/*
+// @match        https://aviaradar.ru/*
 // @run-at       document-start
 // @updateURL    https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
 // @downloadURL  https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
