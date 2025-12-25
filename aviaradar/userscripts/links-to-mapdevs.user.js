@@ -5,8 +5,8 @@
 // @description  Transpose polar diagramm onto a real map on mapdevelopers.com
 // @match        https://aviaradar.ru/*
 // @run-at       document-start
-// @updateURL    https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
-// @downloadURL  https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.js
+// @updateURL    https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.user.js
+// @downloadURL  https://github.com/OpossumPetya/aviatools/raw/refs/heads/main/aviaradar/userscripts/links-to-mapdevs.user.js
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
